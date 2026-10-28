@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account & Data Deletion Request — Bache Dabba</title>
+  <meta name="description" content="Official account and data deletion request page for Bache Dabba Parent and Partner mobile applications, compliant with Google Play Store, Apple App Store, and DPDP Act 2023.">
+  <link rel="icon" type="image/png" href="/assets/icon/app_icon.png">
+  <style>
+    :root {
+      --primary: #167447;
+      --primary-dark: #0B5938;
+      --primary-light: #E5F5E9;
+      --text-main: #153A2C;
+      --text-muted: #597568;
+      --bg-page: #F5FAF5;
+      --bg-card: #FFFFFF;
+      --border-color: #D7E9DB;
+      --danger: #EF4444;
+      --danger-light: #FEE2E2;
+      --success: #10B981;
+      --success-light: #D1FAE5;
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-stack);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    header { background:var(--green); color:white; padding:42px 20px; text-align:center; }
+    header h1 { margin:0; font-size:clamp(28px,5vw,40px); line-height:1.2; }
+    header p { margin:8px 0 0; opacity:.95; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2BA968, #167447);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      box-shadow: 0 2px 6px rgba(22, 116, 71, 0.22);
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .header-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .header-links a:hover {
+      background: var(--primary-light);
+    }
+
+    /* Container */
+    .main-container {
+      max-width: 900px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .alert-box {
+      background: #EFF9F0;
+      border-left: 4px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #205A3D;
+      margin-bottom: 24px;
+    }
+
+    /* Sections */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .step-number {
+      background: var(--primary);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* In-App Steps */
+    .steps-list {
+      list-style: none;
+      counter-reset: step-counter;
+      margin-top: 16px;
+    }
+
+    .steps-list li {
+      position: relative;
+      padding-left: 44px;
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+
+    .steps-list li::before {
+      counter-increment: step-counter;
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      background: #EFF7F0;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .highlight-tag {
+      background: #EFF7F0;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Web Form */
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--text-main);
+      background: #FFFFFF;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(22, 116, 71, 0.16);
+    }
+
+    .helper-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .btn-submit {
+      background: var(--danger);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-submit:hover {
+      background: #DC2626;
+    }
+
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+
+    /* Data Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .data-table th, .data-table td {
+      border: 1px solid var(--border-color);
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .data-table th {
+      background: #F5FAF5;
+      font-weight: 700;
+    }
+
+    .tag-deleted {
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .tag-retained {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 40px;
+      background: #FFFFFF;
+    }
+
+    footer a {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero-card, .section-card {
+        padding: 24px 20px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .header-container {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #69B98A; outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <h1>Bache Dabba</h1>
+    <p>Data deletion</p>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Hero Card -->
+    <section class="hero-card">
+      <span class="badge">Data Safety & Account Management</span>
+      <h1>Request Account & Data Deletion</h1>
+      <p class="subtitle">
+        Bache Dabba is committed to transparent data handling and protecting your family's privacy in compliance with India's <strong>Digital Personal Data Protection (DPDP) Act 2023</strong>, <strong>Google Play Data Safety</strong>, and <strong>Apple App Store Guideline 5.1.1(v)</strong>.
+      </p>
+
+      <div class="alert-box">
+        <strong>⚠️ Please Note:</strong> Deleting your account will immediately terminate all scheduled school meal deliveries, cancel active subscriptions, revoke secondary family access, and unlink assigned RFID/QR tags.
+      </div>
+    </section>
+
+    <!-- Method 1: Delete via Mobile App -->
+    <section class="section-card">
+      <h2><span class="step-number">1</span> Delete Directly in the Mobile App (Instant)</h2>
+      <p style="color: var(--text-muted); font-size: 14px;">
+        If you have the Bache Dabba app installed on your device, you can delete your account and personal information directly without contacting support:
+      </p>
+
+      <ol class="steps-list">
+        <li>
+          Open the <strong>Bache Dabba</strong> app on your Android or iOS device and sign in.
+        </li>
+        <li>
+          Tap the <strong>Profile</strong> tab on the bottom navigation bar (or your avatar icon on the top right).
+        </li>
+        <li>
+          Scroll to the <strong>Account &amp; Privacy</strong> section:
+          <ul style="margin: 8px 0 0 20px; color: var(--text-muted);">
+            <li>Select <span class="highlight-tag">Delete User Information</span> if you wish to clear saved home addresses and delivery preferences while keeping your account and meal deliveries active.</li>
+            <li>Select <span class="highlight-tag">Delete Account</span> to permanently close your account and cancel all meal deliveries.</li>
+          </ul>
+        </li>
+        <li>
+          In the confirmation dialog, type <strong>DELETE</strong> in capital letters and confirm.
+        </li>
+        <li>
+          Your active login session will be invalidated immediately, all subscriptions cancelled, and your account marked for deletion.
+        </li>
+      </ol>
+    </section>
+
+    <!-- Method 2: Web Deletion Request Form -->
+    <section class="section-card">
+      <h2><span class="step-number">2</span> Request Deletion via Email (No App Required)</h2>
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+        If you have uninstalled the app or no longer have access to your mobile device, submit the form below or email <a href="mailto:support@bachedabba.com" style="color: var(--primary-dark); font-weight: 600;">support@bachedabba.com</a> with the subject <em>"Account Deletion Request"</em>.
+      </p>
+
+    <!-- Data Retention & Transparency Matrix -->
+    <section class="section-card">
+      <h2>Data Handling, Deletion &amp; Retention Policy</h2>
+      <p style="color: var(--text-muted); font-size: 14px;">
+        To ensure complete compliance with global privacy regulations and statutory tax laws, data associated with your account is processed as follows:
+      </p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Category</th>
+            <th>Action Upon Deletion</th>
+            <th>Retention Period &amp; Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>User Profile</strong><br>(Name, Phone, Email, Avatar)</td>
+            <td><span class="tag-deleted">Permanently Erased / Anonymized</span></td>
+            <td>Immediately invalidated; personal identifiers scrubbed after 30-day cooling-off window.</td>
+          </tr>
+          <tr>
+            <td><strong>Saved Addresses &amp; Preferences</strong><br>(Apartment, Society, City, Bag Type)</td>
+            <td><span class="tag-deleted">Permanently Deleted</span></td>
+            <td>Erased immediately upon account deletion or info deletion request.</td>
+          </tr>
+          <tr>
+            <td><strong>Child &amp; School Mapping</strong><br>(School name, Class, Section, Bag Tag)</td>
+            <td><span class="tag-deleted">Permanently Unlinked</span></td>
+            <td>Tags returned to pool. Child identities in our system are already zero-PII pseudonymized (<code>kid_1</code>, <code>kid_2</code>).</td>
+          </tr>
+          <tr>
+            <td><strong>Active Subscriptions &amp; Tracking</strong><br>(Daily lunch delivery runs)</td>
+            <td><span class="tag-deleted">Terminated</span></td>
+            <td>Daily delivery stops immediately. Real-time GPS location logs are purged.</td>
+          </tr>
+          <tr>
+            <td><strong>Payment Invoices &amp; Transaction IDs</strong><br>(Razorpay payment IDs, GST invoice numbers)</td>
+            <td><span class="tag-retained">Retained (Anonymized)</span></td>
+            <td>Mandatory retention for <strong>7 to 8 years</strong> under Indian Companies Act &amp; GST regulations for tax and financial auditing, decoupled from your name and phone.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Cooling-off Period & Support -->
+    <section class="section-card">
+      <h2>Cooling-Off Period &amp; Account Restoration</h2>
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 12px;">
+        Account deletion requests include a <strong>30-day grace period</strong>. During this window:
+      </p>
+      <ul style="margin-left: 20px; color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">
+        <li>Your account remains disabled and all deliveries remain paused.</li>
+        <li>No one can access your profile or make unauthorized changes.</li>
+        <li>If you submitted the request in error or wish to reactivate your subscriptions, you can email <a href="mailto:support@bachedabba.com" style="color: var(--primary-dark); font-weight: 600;">support@bachedabba.com</a> within 30 days to cancel the request.</li>
+        <li>After 30 days, all personal identifiers are permanently scrubbed and cannot be recovered.</li>
+      </ul>
+      <p style="font-size: 13px; color: var(--text-muted);">
+        For complete details on our security practices, read the full <a href="https://bachedabba.com/privacy-policy.html" style="color: var(--primary-dark); font-weight: 600;">Bache Dabba Privacy Policy</a>.
+      </p>
+    </section>
+
+  </main>
+</body>
+</html>
+

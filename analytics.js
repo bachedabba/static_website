@@ -41,7 +41,9 @@ async function init() {
       : a.closest("footer") ? "footer"
       : a.closest("section")?.id || "hero";
 
-    if (href.startsWith("mailto:")) {
+    if (a.dataset.store) {
+      track("app_store_click", { store: a.dataset.store, link_location: location_ });
+    } else if (href.startsWith("mailto:")) {
       track("contact_email_click", { link_location: location_ });
     } else if (a.classList.contains("btn")) {
       track("cta_click", { cta_label: label, cta_target: href, link_location: location_ });

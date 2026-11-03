@@ -177,6 +177,9 @@ details p{padding:0 40px 22px 0;color:var(--muted);max-width:62ch}
 .store{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:10px 16px;line-height:1.25}
 .store span{display:block;font-size:.78rem;color:var(--muted)}
 .store b{font-size:.98rem}
+.store-live{background:var(--ink);border-color:var(--ink);color:#fff;text-decoration:none;transition:background-color .15s ease}
+.store-live span{color:rgba(255,255,255,.75)}
+.store-live:hover{background:#0B1530}
 .help{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:.95rem;color:var(--muted)}
 .help a{color:var(--ink);font-weight:700}
 
@@ -353,15 +356,15 @@ footer a:hover{color:#fff;text-decoration:underline}
       <p>This journey began from our own experiences as parents. We truly understand the daily challenges you face because we live them too.</p>
       </div>
     <div class="app" id="app">
-      <h3>The app is on its way</h3>
-      <p class="muted">We're building it for Android and iOS. Once it launches, you'll be able to:</p>
+      <h3>Get the Bache Dabba app</h3>
+      <p class="muted">Now available on Android. The iOS app is coming soon. With the app you can:</p>
       <ul>
         <li>Track your child's dabba live</li>
         <li>Get pickup and delivery alerts</li>
         <li>Manage your monthly plan</li>
       </ul>
       <div class="stores">
-        <div class="store"><span>Coming soon on</span><b>Google Play</b></div>
+        <a class="store store-live" href="https://play.google.com/store/apps/details?id=com.bachedabba.app" target="_blank" rel="noopener" data-store="google_play"><span>Get it on</span><b>Google Play</b></a>
         <div class="store"><span>Coming soon on</span><b>App Store</b></div>
       </div>
       <p class="help">Need help now? <a href="mailto:support@bachedabba.com">support@bachedabba.com</a></p>
